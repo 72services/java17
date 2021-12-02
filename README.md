@@ -1,1 +1,3 @@
-# java17
+# Java 17
+
+Beispielprojekt für Java 17
