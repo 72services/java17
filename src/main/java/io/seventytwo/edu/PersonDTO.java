@@ -12,11 +12,11 @@ public class PersonDTO {
         this.lastName = lastName;
     }
 
-    public String getFirstName() {
+    public String firstName() {
         return firstName;
     }
 
-    public String getLastName() {
+    public String lastName() {
         return lastName;
     }
 
