@@ -1,10 +1,12 @@
 package io.seventytwo.edu;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Exercise: Replace the multiline strings with text blocks
+ */
 public class TextBlocksTest {
 
     @Test
