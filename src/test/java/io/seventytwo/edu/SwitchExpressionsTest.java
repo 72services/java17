@@ -1,5 +1,6 @@
 package io.seventytwo.edu;
 
+import io.seventytwo.edu.calendar.Day;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

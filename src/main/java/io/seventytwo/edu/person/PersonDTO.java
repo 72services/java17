@@ -1,4 +1,4 @@
-package io.seventytwo.edu;
+package io.seventytwo.edu.person;
 
 import java.util.Objects;
 

@@ -1,5 +1,6 @@
 package io.seventytwo.edu;
 
+import io.seventytwo.edu.person.PersonDTO;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
