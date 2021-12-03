@@ -1,4 +1,4 @@
 package io.seventytwo.edu.animal;
 
-public class WildAnimal {
+public abstract class WildAnimal extends Animal{
 }

@@ -1,4 +1,4 @@
 package io.seventytwo.edu.animal;
 
-public class Animal {
+public abstract class Animal {
 }
