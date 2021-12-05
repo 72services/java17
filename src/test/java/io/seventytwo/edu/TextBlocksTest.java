@@ -42,6 +42,22 @@ public class TextBlocksTest {
     }
 
     @Test
+    void noLineBreaks() {
+        String html = "<!DOCTYPE html>" +
+                "<html>" +
+                "    <body>" +
+                "" +
+                "        <h1>My First Heading</h1>" +
+                "" +
+                "        <p>My first paragraph.</p>" +
+                "" +
+                "    </body>" +
+                "</html>";
+
+        assertEquals("<!DOCTYPE html><html>    <body>        <h1>My First Heading</h1>        <p>My first paragraph.</p>    </body></html>", html);
+    }
+
+    @Test
     void trailingSpaces() {
         String html = "<!DOCTYPE html>\n" +
                 "<html>\n" +
