@@ -9,6 +9,12 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
+        <!-- >= JDK 9 -->
+        <maven.compiler.release>17</maven.compiler.release>
+        <!-- < JDK 9 -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -28,11 +34,13 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
+                    <!-- overrides properties -->
                     <source>17</source>
                     <target>17</target>
-                    <compilerArgs>
-                        --enable-preview
-                    </compilerArgs>
+                    <release>17</release>
+
+                    <!-- To test preview features -->
+                    <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
         </plugins>
