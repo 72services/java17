@@ -2,27 +2,30 @@ package io.seventytwo.edu;
 
 import io.seventytwo.edu.animal.Cat;
 import io.seventytwo.edu.animal.Dog;
+import io.seventytwo.edu.animal.Pet;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PatternMatchingTest {
 
+    public static Stream<Pet> animals() {
+        return Stream.of(new Cat(), new Dog());
+    }
+
     /**
      * Exercise 1: Remove unnecessary cast
      */
-    @Test
-    public void instanceOf() {
-        Object obj = new Dog();
-
-        if (obj instanceof Dog) {
-            Dog dog = (Dog) obj;
-
+    @ParameterizedTest
+    @MethodSource("animals")
+    public void instanceOf(Object obj) {
+        if (obj instanceof Dog dog) {
             assertEquals("Wuff", dog.bark());
-            System.out.println(dog.bark());
-        } else if (obj instanceof Cat) {
-            Cat cat = (Cat) obj;
-
+        } else if (obj instanceof Cat cat) {
             assertEquals("Miau", cat.meow());
         }
     }
@@ -38,13 +41,10 @@ public class PatternMatchingTest {
     }
 
     private String getType(Object object) {
-        if (object == null) {
-            return "null";
-        } else if (object instanceof String) {
-            String value = (String) object;
-            return "String is " + value;
-        } else {
-            return "else";
-        }
+        return switch (object) {
+            case null -> "null";
+            case String value -> "String is " + value;
+            default -> "else";
+        };
     }
 }

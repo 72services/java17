@@ -1,4 +1,4 @@
 package io.seventytwo.edu.animal;
 
-public class Capricorn extends Pet {
+public non-sealed class Capricorn extends WildAnimal {
 }

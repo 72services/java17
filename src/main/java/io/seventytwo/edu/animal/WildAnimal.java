@@ -1,4 +1,4 @@
 package io.seventytwo.edu.animal;
 
-public abstract class WildAnimal extends Animal{
+public abstract sealed class WildAnimal extends Animal permits Capricorn, UnknownAnimal {
 }

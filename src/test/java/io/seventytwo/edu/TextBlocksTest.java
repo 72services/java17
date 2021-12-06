@@ -11,74 +11,77 @@ public class TextBlocksTest {
 
     @Test
     void noIndention() {
-        String html = "<!DOCTYPE html>\n" +
-                "<html>\n" +
-                "<body>\n" +
-                "\n" +
-                "<h1>My First Heading</h1>\n" +
-                "\n" +
-                "<p>My first paragraph.</p>\n" +
-                "\n" +
-                "</body>\n" +
-                "</html>";
+        String html = """
+                <!DOCTYPE html>
+                <html>
+                <body>
+
+                <h1>My First Heading</h1>
+
+                <p>My first paragraph.</p>
+
+                </body>
+                </html>""";
 
         assertEquals("<!DOCTYPE html>\n<html>\n<body>\n\n<h1>My First Heading</h1>\n\n<p>My first paragraph.</p>\n\n</body>\n</html>", html);
     }
 
     @Test
     void indention() {
-        String html = "<!DOCTYPE html>\n" +
-                "<html>\n" +
-                "    <body>\n" +
-                "\n" +
-                "        <h1>My First Heading</h1>\n" +
-                "\n" +
-                "        <p>My first paragraph.</p>\n" +
-                "\n" +
-                "    </body>\n" +
-                "</html>";
+        String html = """
+                <!DOCTYPE html>
+                <html>
+                    <body>
+
+                        <h1>My First Heading</h1>
+
+                        <p>My first paragraph.</p>
+
+                    </body>
+                </html>""";
 
         assertEquals("<!DOCTYPE html>\n<html>\n    <body>\n\n        <h1>My First Heading</h1>\n\n        <p>My first paragraph.</p>\n\n    </body>\n</html>", html);
     }
 
     @Test
     void noLineBreaks() {
-        String html = "<!DOCTYPE html>" +
-                "<html>" +
-                "    <body>" +
-                "" +
-                "        <h1>My First Heading</h1>" +
-                "" +
-                "        <p>My first paragraph.</p>" +
-                "" +
-                "    </body>" +
-                "</html>";
+        String html = """
+                <!DOCTYPE html>\
+                <html>\
+                    <body>\
+                        <h1>My First Heading</h1>\
+                        <p>My first paragraph.</p>\
+                    </body>\
+                </html>""";
 
         assertEquals("<!DOCTYPE html><html>    <body>        <h1>My First Heading</h1>        <p>My first paragraph.</p>    </body></html>", html);
     }
 
     @Test
     void trailingSpaces() {
-        String html = "<!DOCTYPE html>\n" +
-                "<html>\n" +
-                "    <body>\n" +
-                "  \n" +
-                "        <h1>My First Heading</h1>\n" +
-                "  \n" +
-                "        <p>My first paragraph.</p>\n" +
-                "  \n" +
-                "    </body>\n" +
-                "</html>";
+        String html = """
+                <!DOCTYPE html>
+                <html>
+                    <body>
+                 \s
+                        <h1>My First Heading</h1>
+                 \s
+                        <p>My first paragraph.</p>
+                 \s
+                    </body>
+                </html>""";
 
         assertEquals("<!DOCTYPE html>\n<html>\n    <body>\n  \n        <h1>My First Heading</h1>\n  \n        <p>My first paragraph.</p>\n  \n    </body>\n</html>", html);
     }
 
     @Test
     void formatting() {
-        String output = String.format("Name: %s\n" +
-                "Phone: %s\n" +
-                "Address: %s\n" +
-                "Salary: $%.2f\n", "Peter Muster", "032 333 11 22", "Bahnhofstrasse 1, Biel", 70_000.00);
+        String output = String.format("""
+                Name: %s
+                Phone: %s
+                Address: %s
+                Salary: $%.2f
+                """, "Peter Muster", "032 333 11 22", "Bahnhofstrasse 1, Biel", 70_000.00);
 
         assertEquals("Name: Peter Muster\nPhone: 032 333 11 22\nAddress: Bahnhofstrasse 1, Biel\nSalary: $70000.00\n", output);
     }
@@ -88,11 +91,11 @@ public class TextBlocksTest {
      */
     @Test
     void escaping() {
-//        String escape = """
-//                """
-//                """;
-//
-//        assertEquals("\"\"\"", escape);
+        String escape = """
+                \"""\
+                """;
+
+        assertEquals("\"\"\"", escape);
     }
 
 }

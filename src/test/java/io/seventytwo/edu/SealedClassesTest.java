@@ -1,7 +1,10 @@
 package io.seventytwo.edu;
 
+import io.seventytwo.edu.animal.Animal;
 import io.seventytwo.edu.animal.Capricorn;
 import io.seventytwo.edu.animal.Pet;
+import io.seventytwo.edu.animal.UnknownAnimal;
+import io.seventytwo.edu.animal.WildAnimal;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -17,7 +20,8 @@ public class SealedClassesTest {
     void noPet() {
         Capricorn capricorn = new Capricorn();
 
-        assertTrue(capricorn instanceof Pet);
+        //assertTrue(capricorn instanceof Pet);
+        assertTrue(capricorn instanceof WildAnimal);
     }
 
     /**
@@ -27,6 +31,8 @@ public class SealedClassesTest {
      */
     @Test
     void unknownAnimal() {
+        Animal unknownAnimal = new UnknownAnimal();
 
+        assertTrue(unknownAnimal instanceof WildAnimal);
     }
 }
