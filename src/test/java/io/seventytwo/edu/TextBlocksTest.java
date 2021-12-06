@@ -83,4 +83,16 @@ public class TextBlocksTest {
         assertEquals("Name: Peter Muster\nPhone: 032 333 11 22\nAddress: Bahnhofstrasse 1, Biel\nSalary: $70000.00\n", output);
     }
 
+    /**
+     * Exercise: How can you use """ in a text block?
+     */
+    @Test
+    void escaping() {
+//        String escape = """
+//                """
+//                """;
+//
+//        assertEquals("\"\"\"", escape);
+    }
+
 }

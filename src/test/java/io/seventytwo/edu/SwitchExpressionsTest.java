@@ -45,24 +45,14 @@ public class SwitchExpressionsTest {
     }
 
     /**
-     * Exercise 3: Replace the if statement with a switch expression
+     * Exercise 3: Make the commented switch expression compile
      */
     @Test
-    void patternMatching() {
-        assertEquals("null", getType(null));
-        assertEquals("String is Hello", getType("Hello"));
-        assertEquals("else", getType(Integer.valueOf("1")));
-    }
+    void incompleteSwitch() {
+        Day day = Day.MONDAY;
 
-    private String getType(Object object) {
-        if (object == null) {
-            return "null";
-        } else if (object instanceof String) {
-            String value = (String) object;
-            return "String is " + value;
-        } else {
-            return "else";
-        }
+//        int numberOfLetters = switch (day) {
+//             case MONDAY -> 1;
+//        };
     }
-
 }
