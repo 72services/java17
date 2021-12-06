@@ -4,6 +4,8 @@ import io.seventytwo.edu.animal.Cat;
 import io.seventytwo.edu.animal.Dog;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class PatternMatchingTest {
 
     @Test
@@ -13,11 +15,12 @@ public class PatternMatchingTest {
         if (obj instanceof Dog) {
             Dog dog = (Dog) obj;
 
+            assertEquals("Wuff", dog.bark());
             System.out.println(dog.bark());
         } else if (obj instanceof Cat) {
             Cat cat = (Cat) obj;
 
-            System.out.println(cat.meow());
+            assertEquals("Miau", cat.meow());
         }
     }
 }
